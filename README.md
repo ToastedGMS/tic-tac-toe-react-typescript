@@ -23,7 +23,7 @@ Make sure you have Node.js (v16 or later) and npm (or yarn) installed. Then foll
 
 ```
 # 1. Clone this repository
-git clone https://github.com/your-username/tic-tac-toe-ts.git
+git clone https://github.com/ToastedGMS/tic-tac-toe-react-typescript.git
 cd tic-tac-toe-ts
 
 # 2. Install dependencies
