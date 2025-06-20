@@ -5,6 +5,8 @@ import checkWinner from '../utils/checkWinner';
 function App() {
 	const [currentPlayer, setCurrentPlayer] = useState('X');
 	const [board, setBoard] = useState(['', '', '', '', '', '', '', '', '']);
+	const [XScore, setXScore] = useState(0);
+	const [OScore, setOScore] = useState(0);
 
 	function handleClick(index: number): void {
 		if (board[index] === '') {
@@ -20,6 +22,7 @@ function App() {
 		if (checkWinner(currentPlayer, board) === true) {
 			alert(`Player ${currentPlayer} wins!`);
 			setBoard(['', '', '', '', '', '', '', '', '']);
+			updateScore(currentPlayer);
 			return;
 		} else if (
 			board.some((cell) => {
@@ -33,6 +36,13 @@ function App() {
 		} else setCurrentPlayer((prev) => (prev === 'X' ? 'O' : 'X'));
 	}, [board]);
 
+	function updateScore(winner: string): void {
+		if (winner === 'X') {
+			setXScore((prev) => prev + 1);
+		} else if (winner === 'O') {
+			setOScore((prev) => prev + 1);
+		}
+	}
 	return (
 		<div className={styles.wrapper}>
 			<div className={styles.boardContainer}>
@@ -47,6 +57,19 @@ function App() {
 						</div>
 					);
 				})}
+			</div>
+			<div className={styles.scoreDiv}>
+				<h2>Score</h2>
+				<div className={styles.scoreContainer}>
+					<div className={styles.scoreItem}>
+						<span>Player X: </span>
+						<span>{XScore}</span>
+					</div>
+					<div className={styles.scoreItem}>
+						<span>Player O: </span>
+						<span>{OScore}</span>
+					</div>
+				</div>
 			</div>
 		</div>
 	);

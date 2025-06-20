@@ -1,6 +1,8 @@
 .wrapper {
 	display: flex;
 	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 }
 
 .boardContainer {
@@ -26,4 +28,17 @@
 .boardCell:hover {
 	background-color: #f0f0f0;
 	cursor: pointer;
+}
+
+.scoreDiv {
+	text-align: center;
+}
+
+.scoreContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 2em;
+	margin-top: 2em;
+	font-size: large;
 }
