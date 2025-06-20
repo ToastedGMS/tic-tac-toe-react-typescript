@@ -21,6 +21,15 @@ function App() {
 			alert(`Player ${currentPlayer} wins!`);
 			setBoard(['', '', '', '', '', '', '', '', '']);
 			return;
+		} else if (
+			board.some((cell) => {
+				return cell === '';
+			}) === false
+		) {
+			alert(`It\'s a tie!`);
+			setBoard(['', '', '', '', '', '', '', '', '']);
+			setCurrentPlayer((prev) => (prev === 'X' ? 'O' : 'X'));
+			return;
 		} else setCurrentPlayer((prev) => (prev === 'X' ? 'O' : 'X'));
 	}, [board]);
 
