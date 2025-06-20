@@ -1,0 +1,29 @@
+.wrapper {
+	display: flex;
+	justify-content: center;
+}
+
+.boardContainer {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	gap: 0px;
+	max-width: fit-content;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.boardCell {
+	border: 1px solid black;
+	height: 8em;
+	width: 8em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.boardCell:hover {
+	background-color: #f0f0f0;
+	cursor: pointer;
+}
